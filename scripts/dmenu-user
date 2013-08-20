@@ -1,0 +1,18 @@
+#!/bin/sh
+
+CONFIG_FILE="dmenu-user"
+
+. @@PREFIX@@/lib/dwm-desktop/lib-dwm-desktop
+
+if [ $DMENU_USER_ONLY_USER = "yes" ]
+then
+    if ! [ -f "$HOME/.$CONFIG_FILE" ]
+        then echo "please add some programs in $HOME/.$CONFIG_FILE (one per line) and delete this line" > $HOME/.$CONFIG_FILE
+    fi
+    exe=`cat $HOME/.$CONFIG_FILE | dmenu ${1+"$@"}` && exec $exe
+else
+    if ! [ -f "$HOME/.$CONFIG_FILE" ]
+        then touch $HOME/.$CONFIG_FILE
+    fi
+    exe=`cat $HOME/.$CONFIG_FILE @@CONFPREFIX@@/etc/dwm-desktop/$CONFIG_FILE | dmenu ${1+"$@"}` && exec $exe
+fi

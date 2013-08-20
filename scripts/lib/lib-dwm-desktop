@@ -47,4 +47,5 @@ else
     printf "# User configuration for dwm-desktop\n" > $HOME/.dwm-desktop
     printf "# you can override any global parameters of\n" >> $HOME/.dwm-desktop
     printf "# @@PREFIX@@/etc/dwm-desktop/dwm-desktop.conf here\n" >> $HOME/.dwm-desktop
+    cat @@PREFIX@@/etc/dwm-desktop/dwm-desktop.conf |sed "s/^/#/" >> $HOME/.dwm-desktop
 fi

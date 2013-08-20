@@ -59,6 +59,10 @@ install: all
 	@cp -f scripts/dwm-term ${DESTDIR}${PREFIX}/bin/dwm-term
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dwm-term
 	@sed -i "s|@@PREFIX@@|${PREFIX}|" ${DESTDIR}${PREFIX}/bin/dwm-term
+	@cp -f scripts/dmenu-user ${DESTDIR}${PREFIX}/bin/dmenu-user
+	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu-user
+	@sed -i "s|@@CONFPREFIX@@|${CONFPREFIX}|" ${DESTDIR}${PREFIX}/bin/dmenu-user
+	@sed -i "s|@@PREFIX@@|${PREFIX}|" ${DESTDIR}${PREFIX}/bin/dmenu-user
 	@echo installing lib to ${DESTDIR}${PREFIX}/lib/dwm-desktop/
 	@mkdir -p ${DESTDIR}${PREFIX}/lib/dwm-desktop/
 	@cp scripts/lib/lib-dwm-desktop ${DESTDIR}${PREFIX}/lib/dwm-desktop/
@@ -66,6 +70,7 @@ install: all
 	@echo installing configuration in ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
 	@mkdir -p ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
 	@cp config/dwm-desktop.conf ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
+	@cp config/dmenu-user ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm-desktop.1
