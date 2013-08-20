@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# funtion that exports a variable 
+# if not already exported
+#
+# $1 the variable name
+# $2 the target value
+
+export_if_not_set(){
+    var_name=$1
+    value="$2"
+    var=$( eval printf "a\$$var_name" )
+    if [ "$var" = "a" ]
+    then
+        export $var_name="$value"
+    fi
+}
+
+# function that exports a variable 
+# only if OVERRIDE_EXPORT is set to "yes"
+# or this variable is empty/not set
+#
+# $1 the variable name
+# $2 the target value
+
+export_dwm(){
+    var_name=$1
+    value="$2"
+    if [ $OVERRIDE_EXPORT = "yes" ]
+    then 
+        export $var_name="$value"
+    else
+        export_if_not_set $var_name "$value"
+    fi
+}
+
+# source of the main configuration
+
+. @@PREFIX@@/etc/dwm-desktop/dwm-desktop.conf
+
+# if we have a user configuration, we use it.
+# otherwise we override it
+if [ -f $HOME/.dwm-desktop ]
+then
+    . $HOME/.dwm-desktop
+else
+    printf "# User configuration for dwm-desktop\n" > $HOME/.dwm-desktop
+    printf "# you can override any global parameters of\n" >> $HOME/.dwm-desktop
+    printf "# @@PREFIX@@/etc/dwm-desktop/dwm-desktop.conf here\n" >> $HOME/.dwm-desktop
+fi
