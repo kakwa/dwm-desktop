@@ -46,18 +46,19 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu-user", NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
-static const char *surf[]  = { "google-chrome", NULL };
-static const char *lock[]  = { "xscreensaver-command", "-lock", NULL };
+
+static const char *menucmd[]    = { "dwm-menu", NULL }; // command for menu
+static const char *termcmd[]    = { "dwm-term", NULL }; // command for term
+static const char *browsercmd[] = { "dwm-browser", NULL }; // command for browser
+static const char *lockcmd[]    = { "dwm-lock", NULL }; // command for lock
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,			XK_m,	   spawn,          {.v = dmenucmd } },
+	{ MODKEY,			            XK_m,	   spawn,          {.v = menucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock } },
-	{ MODKEY,      		        XK_e,      spawn,          {.v = lock } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = surf } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+	{ MODKEY,      		            XK_e,      spawn,          {.v = lockcmd } },
+	{ MODKEY,	                    XK_Return, spawn,          {.v = browsercmd } },
 //	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Up,     focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Down,   focusstack,     {.i = -1 } },
@@ -75,8 +76,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 //	{ MODKEY,                       XK_comma,  focusmon,       {.i =  -1 } },
 //	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY,             		XK_Left,   cview,          {.i =  -1 } },
-	{ MODKEY,             		XK_Right,  cview,          {.i =  +1 } },
+	{ MODKEY,             		    XK_Left,   cview,          {.i =  -1 } },
+	{ MODKEY,             		    XK_Right,  cview,          {.i =  +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -106,7 +107,7 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
-
+// a small function to get the current desktop
 int get_desk(){
 for(int i=0;i<9;i++){
 	if ((selmon->tagset[selmon->seltags]) == ((1 << i) & TAGMASK))
@@ -115,6 +116,7 @@ for(int i=0;i<9;i++){
 return 0;
 }
 
+// a small function to change the desktop for the next or the previous one
 void cview(const Arg *arg) {
 	int desk=get_desk();
 
