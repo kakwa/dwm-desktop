@@ -27,7 +27,8 @@ make install
 Content
 =======
 
-Executables:
+Executables
+-----------
 
 * dwm: renamed as dwm-desktop to avoid collision.
 * dmenu-user: a simple launcher menu based on dmenu
@@ -36,7 +37,8 @@ Executables:
 * dwm-lock: shell wrapper that launches a lock (configurable)
 * dwm-menu: shell wrapper that launches a menu (configurable)
 
-Configuration file (default pathes):
+Configuration file (default pathes)
+-----------------------------------
 
 * `/etc/dwm-desktop/dwm-desktop.conf`: dwm-desktop configuration (browser, term, etc)
 * `/etc/dwm-desktop/dmenu-user`: list of programs presented in dmenu-user menu.
@@ -54,7 +56,3 @@ Main shortcuts
 * Resize Window: Alt + Maj + Arrow
 * Lock: Alt + Maj + l
 
-Configuration
-=============
-
-By default
