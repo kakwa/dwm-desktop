@@ -63,10 +63,10 @@ install: all
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu-user
 	@sed -i "s|@@CONFPREFIX@@|${CONFPREFIX}|" ${DESTDIR}${PREFIX}/bin/dmenu-user
 	@sed -i "s|@@PREFIX@@|${PREFIX}|" ${DESTDIR}${PREFIX}/bin/dmenu-user
-	@echo installing lib to ${DESTDIR}${PREFIX}/lib/dwm-desktop/
-	@mkdir -p ${DESTDIR}${PREFIX}/lib/dwm-desktop/
-	@cp scripts/lib/lib-dwm-desktop ${DESTDIR}${PREFIX}/lib/dwm-desktop/
-	@sed -i "s|@@PREFIX@@|${CONFPREFIX}|" ${DESTDIR}${PREFIX}/lib/dwm-desktop/lib-dwm-desktop
+	@echo installing lib to ${DESTDIR}${PREFIX}/share/dwm-desktop/
+	@mkdir -p ${DESTDIR}${PREFIX}/share/dwm-desktop/
+	@cp scripts/lib/lib-dwm-desktop ${DESTDIR}${PREFIX}/share/dwm-desktop/
+	@sed -i "s|@@PREFIX@@|${CONFPREFIX}|" ${DESTDIR}${PREFIX}/share/dwm-desktop/lib-dwm-desktop
 	@echo installing configuration in ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
 	@mkdir -p ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
 	@cp config/dwm-desktop.conf ${DESTDIR}${CONFPREFIX}/etc/dwm-desktop/
@@ -97,7 +97,7 @@ uninstall:
 	@rm -f ${DESTDIR}${PREFIX}/share/icons/dwm-desktop.png
 	@rm -f ${DESTDIR}${PREFIX}/share/menu/dwm-desktop
 	@rm -f ${DESTDIR}${PREFIX}/share/xsessions/dwm-desktop.desktop
-	@rm -rf ${DESTDIR}${PREFIX}/lib/dwm-desktop/
+	@rm -rf ${DESTDIR}${PREFIX}/share/dwm-desktop/
 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/dwm-desktop.1
 
