@@ -48,11 +48,12 @@ All configuration parameters could be overridden by each users in \<HOME DIR\>/.
 Main shortcuts
 ==============
 
-* Terminal: Alt + Maj Enter
+* Terminal: Alt + Maj + Enter
 * Browser: Alt + Enter
 * Close focused window: Alt + Maj + Back Space
 * Menu: Alt + m
-* Change to previous/next workspace: Alt + arrow
-* Resize Window: Alt + Maj + Arrow
+* Change to previous/next workspace: Alt + Arrow left/right
+* Resize Window: Alt + Maj + Arrow left/right
+* Change focused window: Alt + Arrow up/down
 * Lock: Alt + Maj + l
 
