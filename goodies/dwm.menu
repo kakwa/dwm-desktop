@@ -1,0 +1,4 @@
+?package(dwm):needs="wm" section="Window Managers"\
+  title="Dwm Desktop" longtitle="Dynamic window manager" \
+  description="Dwm is a minimalistic window manager."\
+  command="@BIN_PREFIX@/bin/dwm-desktop"

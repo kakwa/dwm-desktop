@@ -74,7 +74,17 @@ install: all
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm-desktop.1
-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
+	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm-desktop.1
+	@mkdir -p ${DESTDIR}${PREFIX}/share/icons/
+	@mkdir -p ${DESTDIR}${PREFIX}/share/menu/
+	@mkdir -p ${DESTDIR}${PREFIX}/share/xsessions
+	@cp goodies/dwm.png ${DESTDIR}${PREFIX}/share/icons/dwm-desktop.png
+	@cp goodies/dwm.menu ${DESTDIR}${PREFIX}/share/menu/dwm-desktop
+	@cp goodies/dwm.desktop ${DESTDIR}${PREFIX}/share/xsessions/dwm-desktop.desktop
+	@chmod 644 ${DESTDIR}${PREFIX}/share/icons/dwm-desktop.png
+	@chmod 644 ${DESTDIR}${PREFIX}/share/menu/dwm-desktop
+	@chmod 644 ${DESTDIR}${PREFIX}/share/xsessions/dwm-desktop.desktop
+	@sed -i 's|@BIN_PREFIX@|${PREFIX}/bin/dwm-desktop|' ${DESTDIR}${PREFIX}/share/menu/dwm-desktop
 
 uninstall:
 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
@@ -83,6 +93,10 @@ uninstall:
 	@rm -f ${DESTDIR}${PREFIX}/bin/dwm-menu
 	@rm -f ${DESTDIR}${PREFIX}/bin/dwm-term
 	@rm -f ${DESTDIR}${PREFIX}/bin/dwm-browser
+	@echo removing goodies
+	@rm -f ${DESTDIR}${PREFIX}/share/icons/dwm-desktop.png
+	@rm -f ${DESTDIR}${PREFIX}/share/menu/dwm-desktop
+	@rm -f ${DESTDIR}${PREFIX}/share/xsessions/dwm-desktop.desktop
 	@rm -rf ${DESTDIR}${PREFIX}/lib/dwm-desktop/
 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/dwm-desktop.1
