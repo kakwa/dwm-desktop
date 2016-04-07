@@ -43,7 +43,7 @@ Configuration file (default pathes)
 * `/etc/dwm-desktop/dwm-desktop.conf`: dwm-desktop configuration (browser, term, etc)
 * `/etc/dwm-desktop/dmenu-user`: list of programs presented in dmenu-user menu.
 
-All configuration parameters could be overridden by each users in <HOME DIR>/.<CONFIG FILE>
+All configuration parameters could be overridden by each users in \<HOME DIR\>/.\<CONFIG FILE\>
 
 Main shortcuts
 ==============
