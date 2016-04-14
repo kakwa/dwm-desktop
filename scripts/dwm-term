@@ -4,6 +4,6 @@
 
 . @@PREFIX@@/lib/dwm-desktop/lib-dwm-desktop
 
-export_dwm TERM $DWM_TERM
+export_dwm TERM "$DWM_TERM"
 
 exec $TERM
