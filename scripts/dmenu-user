@@ -2,7 +2,7 @@
 
 CONFIG_FILE="dmenu-user"
 
-. @@PREFIX@@/lib/dwm-desktop/lib-dwm-desktop
+. @@PREFIX@@/share/dwm-desktop/lib-dwm-desktop
 
 if [ $DMENU_USER_ONLY_USER = "yes" ]
 then

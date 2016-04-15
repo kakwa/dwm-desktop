@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#source the lib
+#source the share
 
-. @@PREFIX@@/lib/dwm-desktop/lib-dwm-desktop
+. @@PREFIX@@/share/dwm-desktop/lib-dwm-desktop
 
 export_dwm LOCK_CMD "$DWM_LOCK_CMD"
 
