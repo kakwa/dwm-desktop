@@ -1,14 +1,12 @@
 dwm-desktop
 ===========
 
-dwm 5.9 + configuration + mods + shell utilities
+dwm 6.1 + configuration + mods + shell utilities
 
 Description
 ===========
 
-dwm-desktop is a vanilla dwm 5.9 with a custom configuration, plus some shell wrappers.
-
-
+dwm-desktop is a modified dwm 6.1 with a custom configuration, plus some shell wrappers.
 
 License
 =======
@@ -55,5 +53,6 @@ Main shortcuts
 * Change to previous/next workspace: Alt + Arrow left/right
 * Resize Window: Alt + Maj + Arrow left/right
 * Change focused window: Alt + Arrow up/down
+* Change main window (zoom): Alt + Maj + Arrow up
 * Lock: Alt + Maj + l
 
