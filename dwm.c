@@ -1117,7 +1117,8 @@ maprequest(XEvent *e)
 void
 monocle(Monitor *m)
 {
-	return tile(m);
+	tile(m);
+	return;
 	unsigned int n = 0;
 	Client *c;
 
