@@ -146,6 +146,7 @@ void cview(const Arg *arg) {
         if(arg->ui & TAGMASK)
                 selmon->tagset[selmon->seltags] = (1 << desk) & TAGMASK;
         arrange(selmon);
+	focus(NULL);
        return;
 }
 
