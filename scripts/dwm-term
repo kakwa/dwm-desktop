@@ -6,4 +6,4 @@
 
 export_dwm TERM "$DWM_TERM"
 
-exec $TERM
+eval $TERM
