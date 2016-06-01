@@ -6,4 +6,4 @@
 
 export_dwm MENU "$DWM_MENU"
 
-exec $MENU
+eval $MENU
