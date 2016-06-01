@@ -6,4 +6,4 @@
 
 export_dwm BROWSER "$DWM_BROWSER"
 
-exec $BROWSER
+eval $BROWSER
