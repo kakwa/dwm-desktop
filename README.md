@@ -1,7 +1,7 @@
 dwm-desktop
 ===========
 
-dwm 6.1 + configuration + mods + shell utilities
+dwm 6.2 + configuration + mods + shell utilities
 
 Description
 ===========
