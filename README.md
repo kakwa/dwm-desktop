@@ -1,12 +1,12 @@
 dwm-desktop
 ===========
 
-dwm 6.1 + configuration + mods + shell utilities
+dwm 6.2 + configuration + mods + shell utilities
 
 Description
 ===========
 
-dwm-desktop is a modified dwm 6.1 with a custom configuration, plus some shell wrappers.
+dwm-desktop is a modified dwm 6.2 with a custom configuration, plus some shell wrappers.
 
 License
 =======
